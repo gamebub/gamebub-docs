@@ -15,7 +15,7 @@ If the Game Bub is plugged into a Dock, it will also show information about the 
 ### General
 
 * **Date and Time (UTC)**: Adjust the system's date and time, in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time).
-    * Press ++"Confirm"++ to start editing, use the ++"D-Pad"++ to modify, and press ++"Confirm"++ again to save the modified time.
+    * Press <span class="btn btn-confirm">Confirm</span> to start editing, use the <span class="btn btn-dpad">D-Pad</span> to modify, and press <span class="btn btn-confirm">Confirm</span> again to save the modified time.
 * **Startup Action**: change the behavior of the device at boot
     * *Main Menu* (default): open the main menu
     * *Run Cartridge*: skip the menu, immediately run the inserted game cartridge

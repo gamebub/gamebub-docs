@@ -6,7 +6,7 @@
 
 Make sure your Game Bub's battery is charged.
 
-Also, make sure you aren't holding the ++"Home"++ or ++"Volume\-"++ buttons while turning the device on. If you did, hold the ++"Power"++ button for 7 seconds to force the device off, and then try turning on the device again.
+Also, make sure you aren't holding the <span class="btn btn-home">Home</span> or <span class="btn btn-vol-down">Volume-</span> buttons while turning the device on. If you did, hold the <span class="btn btn-power">Power</span> button for 7 seconds to force the device off, and then try turning on the device again.
 
 #### Game Bub isn't recognizing my game cartridge
 

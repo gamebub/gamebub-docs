@@ -1,0 +1,37 @@
+.btn {
+    border-radius: .2rem;
+    box-shadow: 0 0 0 .05rem var(--md-typeset-kbd-border-color), 0 .05rem 0 var(--md-typeset-kbd-border-color);
+    color: var(--md-default-fg-color);
+    display: inline-block;
+    font-size: 0.8em;
+    padding: 0 0.5em;
+}
+
+.btn::before {
+    position: relative;
+    top: 1px;
+    image-rendering: pixelated;
+    padding-right: 6px;
+    width: 12px;
+    height: 12px;
+}
+
+[data-md-color-scheme="slate"] .btn::before {
+    filter: invert(1);
+}
+
+.btn-confirm::before {
+    content: url('/assets/icons/btn-confirm.png');
+}
+
+.btn-cancel::before {
+    content: url('/assets/icons/btn-cancel.png');
+}
+
+.btn-home::before {
+    content: url('/assets/icons/btn-home.png');
+}
+
+.btn-dpad::before {
+    content: url('/assets/icons/btn-dpad.png');
+}

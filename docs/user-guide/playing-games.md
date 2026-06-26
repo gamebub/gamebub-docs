@@ -8,7 +8,7 @@ To play a Game Boy, Game Boy Color, or Game Boy Advance game, insert the game ca
 
     To avoid data loss, only insert and remove game cartridges while the device is off or in the Main Menu.
 
-Press ++"Home"++ to enter the in-game menu, where you can reset the game or return to the Main Menu. Make sure to save your progress in the game before exiting!
+Press <span class="btn btn-home">Home</span> to enter the in-game menu, where you can reset the game or return to the Main Menu. Make sure to save your progress in the game before exiting!
 
 <figure markdown="span" style="image-rendering: pixelated;">
   ![Screenshot: In-game menu](screenshots/ui-game-menu.png) <figcaption>In-game menu</figcaption>
@@ -18,7 +18,7 @@ Press ++"Home"++ to enter the in-game menu, where you can reset the game or retu
 
 You can also optionally use a microSD card to load homebrew game ROMs. First, format your microSD card with FAT32 (_not exFAT_), and insert it into the microSD slot while the device is off.
 
-Then, turn on your Game Bub and select **Load ROM** from the Main Menu. Use the ++"D-Pad"++ to browse for the game you want to play, and press ++"Confirm"++ to load it.
+Then, turn on your Game Bub and select **Load ROM** from the Main Menu. Use the <span class="btn btn-dpad">D-Pad</span> to browse for the game you want to play, and press <span class="btn btn-confirm">Confirm</span> to load it.
 
 <figure markdown="span" style="image-rendering: pixelated;">
   ![Screenshot: Load ROM menu](screenshots/ui-load-rom.png) <figcaption>Load ROM menu</figcaption>
