@@ -1,173 +1,50 @@
 ---
-icon: lucide/rocket
+title: Introduction
 ---
 
-# Get started
+<style>
+  .md-content h1 {
+    display: none;
+  }
+</style>
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
-
-## Commands
-
-* [`zensical new`][new] - Create a new project
-* [`zensical serve`][serve] - Start local web server
-* [`zensical build`][build] - Build your site
-
-  [new]: https://zensical.org/docs/usage/new/
-  [serve]: https://zensical.org/docs/usage/preview/
-  [build]: https://zensical.org/docs/usage/build/
-
-## Examples
-
-### Admonitions
-
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/)
-
-!!! note
-
-    This is a **note** admonition. Use it to provide helpful information.
-
-!!! warning
-
-    This is a **warning** admonition. Be careful!
-
-### Details
-
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/#collapsible-blocks)
-
-??? info "Click to expand for more info"
-
-    This content is hidden until you click to expand it.
-    Great for FAQs or long explanations.
-
-## Code Blocks
-
-> Go to [documentation](https://zensical.org/docs/authoring/code-blocks/)
-
-``` python hl_lines="2" title="Code blocks"
-def greet(name):
-    print(f"Hello, {name}!") # (1)!
-
-greet("Python")
-```
-
-1.  > Go to [documentation](https://zensical.org/docs/authoring/code-blocks/#code-annotations)
-
-    Code annotations allow to attach notes to lines of code.
-
-Code can also be highlighted inline: `#!python print("Hello, Python!")`.
-
-## Content tabs
-
-> Go to [documentation](https://zensical.org/docs/authoring/content-tabs/)
-
-=== "Python"
-
-    ``` python
-    print("Hello from Python!")
-    ```
-
-=== "Rust"
-
-    ``` rs
-    println!("Hello from Rust!");
-    ```
-
-## Diagrams
-
-> Go to [documentation](https://zensical.org/docs/authoring/diagrams/)
-
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
-
-## Footnotes
-
-> Go to [documentation](https://zensical.org/docs/authoring/footnotes/)
-
-Here's a sentence with a footnote.[^1]
-
-Hover it, to see a tooltip.
-
-[^1]: This is the footnote.
+<figure markdown="span" style="margin-bottom: 2em;">
+    ![Game Bub logo](assets/logo-light.svg#only-light){ width="480" }
+    ![Game Bub logo](assets/logo-dark.svg#only-dark){ width="480" }
+</figure>
 
 
-## Formatting
+**Game Bub** is an open-source FPGA retro emulation handheld, with support for Game Boy, Game Boy Color, and Game Boy Advance games.
 
-> Go to [documentation](https://zensical.org/docs/authoring/formatting/)
+<!-- TODO picture of device here  -->
 
-- ==This was marked (highlight)==
-- ^^This was inserted (underline)^^
-- ~~This was deleted (strikethrough)~~
-- H~2~O
-- A^T^A
-- ++ctrl+alt+del++
+## Features
 
-## Icons, Emojis
+* Play physical Game Boy, Game Boy Color, and Game Boy Advance cartridges
+* Load and play homebrew ROM files from a microSD card (with built-in support for rumble, clock, accelerometer, and gyroscope)
+* Multiplayer link cable functionality
+* Custom, from-scratch Game Boy, and Game Boy Advance FPGA cores with great game compatibility
+* 14+ hour battery life
+* Video output to TV or monitor via custom dock
+* **Open-source**: you can build or modify your own!
 
-> Go to [documentation](https://zensical.org/docs/authoring/icons-emojis/)
 
-* :sparkles: `:sparkles:`
-* :rocket: `:rocket:`
-* :tada: `:tada:`
-* :memo: `:memo:`
-* :eyes: `:eyes:`
+## How to get one
 
-## Maths
+The easiest way to get a Game Bub is to [buy it from Crowd Supply](https://www.crowdsupply.com/second-bedroom/game-bub). This is a prebuilt device that works right out of the box, with a high-quality injection molded enclosure and buttons, and a laminated IPS screen.
 
-> Go to [documentation](https://zensical.org/docs/authoring/math/)
+If you're adventurous, you can also build your own device from scratch. You'll have to manufacture and assembly PCBs, 3D print the shell and buttons, and assemble components from a variety of sources. Note that this not a project for beginners, and some electronics experience is strongly recommended. You can get the project files from the [GitHub repository](https://github.com/elipsitz/gamebub).
 
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
+<!-- TODO link to the new building guide -->
 
-!!! warning "Needs configuration"
-    Note that MathJax is included via a `script` tag on this page and is not
-    configured in the generated default configuration to avoid including it
-    in a pages that do not need it. See the documentation for details on how
-    to configure it on all your pages if they are more Maths-heavy than these
-    simple starter pages.
+## Support
 
-<script id="MathJax-script" src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
-    }
-  };
+Please note that support is only available for devices purchased from the official [Crowd Supply store](https://www.crowdsupply.com/second-bedroom/game-bub). If you purchased your Game Bub from somewhere else, you should contact the seller for support. If you built your own device, we'll try to help you out, but no guarantees.
 
-  document$.subscribe(() => {
-    MathJax.startup.output.clearCache()
-    MathJax.typesetClear()
-    MathJax.texReset()
-    MathJax.typesetPromise()
-  })
-</script>
+If you need help with your order (including questions about shipping), [contact Crowd Supply directly](https://crowdsupply.com/contact).
 
-## Task Lists
+If you have general questions about Game Bub, or just want to chat, feel free to join the [Game Bub Discord](https://discord.gg/T5xrYpMfN7).
 
-> Go to [documentation](https://zensical.org/docs/authoring/lists/#using-task-lists)
+You can also file bug reports and feature requests by opening an issue on the [GitHub issue tracker](https://github.com/elipsitz/gamebub/issues).
 
-* [x] Install Zensical
-* [x] Configure `zensical.toml`
-* [x] Write amazing documentation
-* [ ] Deploy anywhere
-
-## Tooltips
-
-> Go to [documentation](https://zensical.org/docs/authoring/tooltips/)
-
-[Hover me][example]
-
-  [example]: https://example.com "I'm a tooltip!"
+If you're dealing with a broken or defective device and need to make a warranty claim, email us at [support@gamebub.net](mailto:support@gamebub.net). You can also use this email for questions if you're unwilling or unable to use Discord or GitHub.
