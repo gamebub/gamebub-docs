@@ -30,7 +30,7 @@ nav = [
     "user-guide/faq.md",
     "user-guide/firmware-updates.md",
   ] },
-  { "Open Source Licenses" = "open-source-licenses.md" },
+  { "Copyrights & Licenses" = "copyrights-and-licenses.md" },
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize
