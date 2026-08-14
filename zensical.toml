@@ -27,9 +27,9 @@ nav = [
     "user-guide/settings.md",
     "user-guide/tools.md",
     "user-guide/dock.md",
-    "user-guide/faq.md",
     "user-guide/firmware-updates.md",
   ] },
+  { "Frequently Asked Questions" = "faq.md" },
   { "Copyrights & Licenses" = "copyrights-and-licenses.md" },
 ]
 
@@ -312,6 +312,8 @@ link = "https://discord.gg/T5xrYpMfN7"
 [project.markdown_extensions.md_in_html]
 [project.markdown_extensions.toc]
 permalink = true
+toc_depth = 3
+
 [project.markdown_extensions.pymdownx.arithmatex]
 generic = true
 [project.markdown_extensions.pymdownx.betterem]

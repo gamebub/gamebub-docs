@@ -33,7 +33,7 @@ title: Introduction
 
 The easiest way to get a Game Bub is to [buy it from Crowd Supply](https://www.crowdsupply.com/second-bedroom/game-bub). This is a prebuilt device that works right out of the box, with a high-quality injection molded enclosure and buttons, and a laminated IPS screen.
 
-If you're adventurous, you can also build your own device from scratch. You'll have to manufacture and assembly PCBs, 3D print the shell and buttons, and assemble components from a variety of sources. Note that this not a project for beginners, and some electronics experience is strongly recommended. You can get the project files from the [GitHub repository](https://github.com/elipsitz/gamebub).
+If you're adventurous, you can also build your own device from scratch. You'll have to manufacture and assemble PCBs, 3D print the shell and buttons, and assemble components from a variety of sources. Note that this not a project for beginners, and some electronics experience is strongly recommended. You can get the project files from the [GitHub repository](https://github.com/elipsitz/gamebub).
 
 <!-- TODO link to the new building guide -->
 
