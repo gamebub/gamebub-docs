@@ -32,7 +32,7 @@ To pair a wireless controller, press and hold the button on the rear of the Dock
 
 To cancel pairing, press and hold the button until it stops blinking.
 
-The Dock uses [Bluepad32](https://bluepad32.readthedocs.io/en/latest/supported_gamepads/), which support includes the following controllers:
+The Dock uses [Bluepad32](https://bluepad32.readthedocs.io/en/latest/supported_gamepads/), which supports a variety of controllers, including the following:
 
 * Sony PlayStation 3, 4, and 5
 * Xbox Wireless Series S/X (models 1708, 1914)
