@@ -139,4 +139,4 @@ To remove light grime, gently scrub the contacts using a cotton swap and 91%+ is
 
 Game Bub has very good game compatibility, but it isn't perfect. If you encounter bug with one of the built-in cores, you can [file an issue on GitHub](https://github.com/elipsitz/gamebub/issues), or report it on the Discord.
 
-If you're playing a Game Boy Advance game, you should also make sure you're [using the official BIOS](playing-games/#custom-bios-files) for maximum compatibility.
+If you're playing a Game Boy Advance game, you should also make sure you're [using the official BIOS](/user-guide/playing-games/#custom-bios-files) for maximum compatibility.
