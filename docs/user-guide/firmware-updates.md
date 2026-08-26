@@ -35,7 +35,7 @@ with a data-capable USB-C cable.
 ### Installing an update
 
 1. Unplug the Dock.
-2. While holding the rear button, plug the dock into a computer with a USB-C cable.
+2. While holding the rear button, connect the rear USB-C port to a computer using a USB cable.
 3. After a few seconds, a virtual USB drive called **GameBubDock** will appear.
 4. Drag the firmware update file (`.uf2`) to the virtual USB drive.
 5. Allow up to 30 seconds to install the update.
