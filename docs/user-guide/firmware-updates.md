@@ -1,16 +1,14 @@
 # Firmware updates
 
-You should keep your devices updated to take advantages of the latest bugfixes, features, and
+You should keep your devices updated to take advantage of the latest bugfixes, features, and
 other improvements.
 
-The Game Bub Handheld and Dock can both be updated over USB, by connecting them to a computer
-with a data-capable USB-C cable.
+The Game Bub Handheld and Dock can both be updated over USB by connecting them to a computer
+with a data-capable USB cable.
 
 ## Handheld
 
-!!! note
-
-    There are currently no firmware updates available. Please check later!
+You can find the latest update on the [GitHub release page](https://github.com/elipsitz/gamebub/releases).
 
 ### Installing an update
 
