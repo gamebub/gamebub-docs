@@ -29,6 +29,13 @@ nav = [
     "user-guide/dock.md",
     "user-guide/firmware-updates.md",
   ] },
+  { "Developing Cores" = [
+    "developing-cores/overview.md",
+    "developing-cores/core-structure.md",
+    "developing-cores/packaging.md",
+    "developing-cores/reference-interfaces.md",
+    "developing-cores/reference-metadata.md",
+  ] },
   { "Frequently Asked Questions" = "faq.md" },
   { "Copyrights & Licenses" = "copyrights-and-licenses.md" },
 ]
