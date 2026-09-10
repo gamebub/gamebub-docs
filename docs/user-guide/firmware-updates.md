@@ -26,9 +26,7 @@ You can find the latest update on the [GitHub release page](https://github.com/e
 
 ## Dock
 
-!!! note
-
-    There are currently no firmware updates available. Please check later!
+You can find the latest update on the [GitHub release page](https://github.com/gamebub/dock-firmware/releases).
 
 ### Installing an update
 
