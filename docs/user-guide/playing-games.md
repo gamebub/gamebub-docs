@@ -18,7 +18,7 @@ Press <span class="btn btn-home">Home</span> to enter the in-game menu, where yo
 
 You can also optionally use a microSD card to load homebrew game ROMs. First, format your microSD card with FAT32 (_not exFAT_), and insert it into the microSD slot while the device is off.
 
-Then, turn on your Game Bub and select **Load ROM** from the Main Menu. Use the <span class="btn btn-dpad">D-Pad</span> to browse for the game you want to play, and press <span class="btn btn-confirm">Confirm</span> to load it.
+Then, turn on your Game Bub and select **Cores** from the Main Menu. Use the <span class="btn btn-dpad">D-Pad</span> to select the core and browse for the game you want to play, and then press <span class="btn btn-confirm">Confirm</span> to load it.
 
 <figure markdown="span" style="image-rendering: pixelated;">
   ![Screenshot: Load ROM menu](screenshots/ui-load-rom.png) <figcaption>Load ROM menu</figcaption>

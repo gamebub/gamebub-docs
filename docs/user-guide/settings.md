@@ -52,3 +52,6 @@ This section controls the built-in Game Boy Advance core.
 * **Enable Game Boy Player**: Emulate the [Game Boy Player](https://en.wikipedia.org/wiki/Game_Boy_Player). This enables rumble in [supported games](https://en.wikipedia.org/wiki/Game_Boy_Player#Rumble_enabled). However, [GBA Video](https://en.wikipedia.org/wiki/Game_Boy_Advance_Video) cartridges will refuse to work.
     * *Off* (default): disable Game Boy Player emulation
     * *On*: enable Game Boy Player emulation
+* **Warn about missing BIOS**: Show a compatibility warning if no GBA BIOS was found when launching a game
+    * *Off*: disable the warning
+    * *On* (default): enable the warning
