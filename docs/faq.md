@@ -149,3 +149,7 @@
     Game Bub has very good game compatibility, but it isn't perfect. If you encounter bug with one of the built-in cores, you can [file an issue on GitHub](https://github.com/elipsitz/gamebub/issues), or report it on the Discord.
 
     If you're playing a Game Boy Advance game, you should also make sure you're [using the official BIOS](/user-guide/playing-games/#custom-bios-files) for maximum compatibility.
+
+??? question "Game Bub isn't recognizing my microSD card."
+
+    Make sure your microSD card is formatted with FAT32 (not exFAT) and uses a MBR partition table (not GPT).
