@@ -28,13 +28,12 @@ Then, turn on your Game Bub and select **Cores** from the Main Menu. Use the <sp
 
 The original Game Boy, Game Boy Color, and Game Boy Advance BIOS files are copyrighted by Nintendo and cannot be legally redistributed.
 
-Instead, the Game Bub's built-in cores ship with free, open-source BIOS replacements (GB and GBC derived from [SameBoy](https://sameboy.github.io/), GBA derived from [Cult-of-GBA/BIOS](https://github.com/Cult-of-GBA/BIOS/)).
+Instead, the Game Bub's built-in cores ship with free, open-source BIOS replacements (GB and GBC derived from [SameBoy](https://sameboy.github.io/), GBA derived from [emibios](https://github.com/coolbho3k/emibios)).
 
 In addition to not showing the classic system boot screen, these replacement BIOSes have other limitations:
 
 * GBC: does not support Game Boy compatibility mode palette selection
-* GBA: does not support the "multi-boot" feature
-* GBA: incompatibilities cause bugs in certain games
+* GBA: there could be incompatibilities that cause bugs in games
 
 While the original files cannot be distributed with Game Bub, you *can* supply them yourself via the microSD card.
 

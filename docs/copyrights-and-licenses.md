@@ -561,6 +561,7 @@ Game Bub is also built on top of numerous pieces of open-source software.
 * [Ark Pixel Font](https://github.com/TakWolf/ark-pixel-font/): Copyright (c) 2012, TakWolf (https://takwolf.com), licensed under the [SIL Open Font License, Version 1.1](https://github.com/TakWolf/ark-pixel-font/blob/master/LICENSE-OFL).
 * [SameBoy](https://github.com/LIJI32/SameBoy/): Copyright (c) 2015-2026 Lior Halphon, licensed under the [Expat License](https://github.com/LIJI32/SameBoy/blob/master/LICENSE)
 * [gba-bios](https://github.com/Cult-of-GBA/BIOS): Copyright (c) 2020-2021 DenSinH and fleroviux, licensed under the [MIT License](https://github.com/Cult-of-GBA/BIOS/blob/master/LICENSE)
+* [emibios](https://github.com/coolbho3k/emibios): Licensed under the [GNU Lesser General Public License v3.0](https://github.com/coolbho3k/emibios/blob/main/LICENSE)
 * [FlashGBX LK Firmware](https://github.com/Lesserkuma/FlashGBX_LK_Firmware/): Copyright (c) Lesserkuma, licensed under the [GNU General Public License v3.0](https://github.com/Lesserkuma/FlashGBX_LK_Firmware/blob/main/LICENSE)
 
 ### Handheld Gateware
