@@ -24,6 +24,23 @@ Then, turn on your Game Bub and select **Cores** from the Main Menu. Use the <sp
   ![Screenshot: Load ROM menu](screenshots/ui-load-rom.png) <figcaption>Load ROM menu</figcaption>
 </figure>
 
+#### Game Boy Advance: Overrides
+
+Game Boy Advance cartridges do not indicate whether they have additional features, like real-time clock, rumble, accelerometer, gyroscope, etc. As a result, Game Bub has a list of Game Boy Advance games and their special features, which it uses when loading ROMs.
+
+For homebrew games that Game Bub doesn't know about, you can provide an *Override .json file* to tell it to enable certain features.
+
+To do this, create a `.json` file with the same name as your `.gba` file. That is, for `/games/Apotris.gba`, you would create `/games/Apotris.json`. Then, specify which extra features it has (by setting the relevant key to `true`):
+
+```json
+{
+  "has_rumble": true,
+  "has_rtc": false,
+  "has_accel": false,
+  "has_gyro": false
+}
+```
+
 ### Custom BIOS files
 
 The original Game Boy, Game Boy Color, and Game Boy Advance BIOS files are copyrighted by Nintendo and cannot be legally redistributed.
