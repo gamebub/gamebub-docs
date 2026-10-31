@@ -14,6 +14,6 @@ These cores have been developed by the community. Note that the information belo
 | [Retro&#45;Bub&#46;GG](https://github.com/florin-byte/gamebub-gg) | Game Gear | MiSTer&#44; Florin | [v0.3.0](https://github.com/florin-byte/gamebub-gg/releases/tag/v0.3.0) |  | GPL&#45;3&#46;0&#45;only |
 | [Retro&#45;Bub&#46;Lynx](https://github.com/florin-byte/gamebub-lynx) | Atari Lynx | MiSTer&#44; Florin | [v0.2.0](https://github.com/florin-byte/gamebub-lynx/releases/tag/v0.2.0) |  | GPL&#45;2&#46;0 |
 | [Tsudakawa&#47;PcEngine&#45;TG&#45;16&#45;Mister&#45;port&#45;for&#45;Game&#45;Bub](https://github.com/Tsudakawa/PcEngine-TG-16-Mister-port-for-Game-Bub) |  |  | [v1.0.0](https://github.com/Tsudakawa/PcEngine-TG-16-Mister-port-for-Game-Bub/releases/tag/v1.0.0) |  |  |
-| [Wenwald&#47;gamebub&#45;2600](https://github.com/Wenwald/gamebub-2600) |  |  | [v1.2.0](https://github.com/Wenwald/gamebub-2600/releases/tag/v1.2.0) |  |  |
+| [Wenwald&#47;gamebub&#45;2600](https://github.com/Wenwald/gamebub-2600) |  |  | [v1.2.1](https://github.com/Wenwald/gamebub-2600/releases/tag/v1.2.1) |  |  |
 <!-- END AUTOGEN -->
 
