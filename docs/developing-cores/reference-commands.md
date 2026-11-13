@@ -86,6 +86,85 @@ Called by the host when it has finished reading the file.
 
 One parameter: the file ID. No results.
 
+
 ## Core -> Host commands
 
-There are no core initiated commands yet.
+The `File*` commands allow the core to perform on-demand I/O on files declared with `"on_demand": true` in `files.json`.
+
+All Core -> Host file commands return a status code as their first result word:
+
+* `FileStatusOk = 0`: the command succeeded
+* `FileStatusErrInvalidFile = 1`: the specified file is invalid or the operation is not valid for the file
+* `FileStatusErrIo = 2`: an I/O error occurred
+* `FileStatusErrBounds = 3`: requested size or `offset + length` violates `exact_size` or `max_size` bounds
+
+### `FileGetSize` (`0x0400`)
+Called by the core to get the size (in bytes) of an on-demand file.
+
+One parameter:
+1. The file ID (as defined in `files.json`)
+
+Three results:
+1. Status (`FileStatus*`)
+2. Lower 32 bits of the file size, in bytes
+3. Upper 32 bits of the file size, in bytes
+
+### `FileSetSize` (`0x0401`)
+Called by the core to resize an on-demand file. May shrink (truncate) or grow (zero-fill) the file. The file must not be `read_only`.
+
+Three parameters:
+1. The file ID (as defined in `files.json`)
+2. Lower 32 bits of the new size, in bytes
+3. Upper 32 bits of the new size, in bytes
+
+One result:
+1. Status (`FileStatus*`)
+
+### `FileRead` (`0x0402`)
+Called by the core to read data from a file into core memory (via the host memory interface).
+
+Attempting to read past the end of the file will lead to a smaller number of bytes read, but the command will still return `FileStatusOk`.
+
+The host writes the data over `host.mem` before raising `done`, so the core's memory interface must remain responsive while waiting for `done`.
+
+Note that there is a performance penalty when switching between different files with `FileRead` and `FileWrite`: for best performance, do as much I/O on one file as possible before switching to another.
+
+Five parameters:
+1. The file ID (as defined in `files.json`)
+2. Core memory destination address
+3. Lower 32 bits of the file offset, in bytes
+4. Upper 32 bits of the file offset, in bytes
+5. Number of bytes to read
+
+Two results:
+1. Status (`FileStatus*`)
+2. Number of bytes transferred
+
+### `FileWrite` (`0x0403`)
+Called by the core to write data from core memory into a file (via the host memory interface). The file must not be `read_only`.
+
+The host reads the data over `host.mem` before raising `done`, so the core's memory interface must remain responsive while waiting for `done`.
+
+Note that there is a performance penalty when switching between different files with `FileRead` and `FileWrite`: for best performance, do as much I/O on one file as possible before switching to another.
+
+Five parameters:
+1. The file ID (as defined in `files.json`)
+2. Core memory source address
+3. Lower 32 bits of the file offset, in bytes
+4. Upper 32 bits of the file offset, in bytes
+5. Number of bytes to write
+
+Two results:
+1. Status (`FileStatus*`)
+2. Number of bytes transferred
+
+### `FileFlush` (`0x0404`)
+Called by the core to flush buffered writes for a file to the microSD card.
+
+Note that the host will already persist writes when exiting the core or powering off. However, this command provides some additional guarantees in case of sudden power loss or crash.
+
+One parameter:
+1. The file ID (as defined in `files.json`)
+
+One result:
+1. Status (`FileStatus*`)
