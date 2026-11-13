@@ -15,7 +15,7 @@ git clone --recurse-submodules https://github.com/gamebub/core-example
 ## Key Components
 
 * `framework/`: The Game Bub Framework, as a Git submodule that can be independently updated
-* `rtl/`: Directory for the core's Verilog or VHDL code
+* `rtl/`: Directory for the core's Verilog (`.v`), SystemVerilog (`.sv`), VHDL (`.vhdl`), and constraint (`.xdc`) files
 * `chisel/src/`: Directory for the core's Chisel code
 * `metadata/`: JSON metadata files to be packaged with the core
 * `mill`: [Mill](https://mill-build.org) bootstrap script, for running framework build commands
@@ -119,7 +119,7 @@ bindExtModule("demo_core", io, Map(
 ))
 ```
 
-Here, `bindExtModule` is used to bind the `io` variable (the complete interface for the core) to an instantiation of the Verilog module called `demo_core`. The framework automatically uses Verilog modules added to the top-level `rtl/` directory.
+Here, `bindExtModule` is used to bind the `io` variable (the complete interface for the core) to an instantiation of the Verilog module called `demo_core`. The framework automatically includes `.v`, `.sv`, `.vhdl`, and `.xdc` files added anywhere under the top-level `rtl/` directory.
 
 `bindExtModule` also provides the means to pass parameters to the module (e.g. `DISPLAY_DIVIDER` here), and while the core is being built, it also **automatically generates a Verilog template** to use, based on the configuration of the core. This template is printed when building the core.
 
@@ -149,3 +149,9 @@ endmodule
 ```
 
 You can see that the ports for the module have been automatically generated and configured based on the individual interfaces used (and their configurations). This is one way that the framework allows cores with wildly different capabilities to be used on the same (or different) underlying hardware.
+
+When generating the `ExtModule` ports and Verilog template:
+
+* Nested `Bundle` fields are flattened with `_<name>` suffixes (for example, `video_data_r`).
+* `Vec` ports are flattened with `_<index>` suffixes (for example, `input_slots_0_buttons_a`).
+* `SInt` ports are emitted as `logic signed [...]` (for example, `output logic signed [15:0] audio_left`).
