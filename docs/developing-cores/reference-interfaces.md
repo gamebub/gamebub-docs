@@ -300,26 +300,26 @@ For each direction signal, high (`1`) indicates output, `0` indicates input.
 
 For each direction signal, high (`1`) indicates output, `0` indicates input.
 
-Game Bub Rev4 has 2x 32 MiB SDRAM chips with a 16-bit data bus.
+The number of SDRAM chips available varies by hardware revision. The horizontal retail version ("Rev4") has 2x 32 MiB SDRAM chips, with separate chip-select and clock-enable lines.
 
 ### Parameters
 
 * `addressWidth`: Row/column address bus width (default: 13)
 * `dataWidth`: Data bus width (default: 16)
-* `bankWidth`: Bank addres width (default: 2)
-* `chips`: Number of parallel chips / chip-select lines (default: 1)
+* `bankWidth`: Bank address width (default: 2)
+* `chips`: Number of parallel chips / chip-select lines (default: 1, must be <= `SdramV0.numChips`)
 
 ### Helpers
 
-* `SdramV0.numChips: Int`: exposes the number of SDRAM chips available on the target
+* `SdramV0.numChips: Int`: exposes the number of SDRAM chips available on the target (`1` on Rev1–3, `2` on Rev4)
 
 ### Port Signals
 
 | Signal | Direction | Type | Description |
 | :----- | :-------- | :--- | :---------- |
 | `clock` | Output | `Clock` | SDRAM clock |
-| `cke` | Output | `Bool` | Clock enable |
-| `cs` | Output | `UInt` | Active-low chip select |
+| `cke` | Output | `UInt` | Clock enable (one bit per chip) |
+| `cs` | Output | `UInt` | Active-low chip select (one bit per chip) |
 | `ras`, `cas`, `we` | Output | `Bool` | Active-low command strobe lines |
 | `dqm` | Output | `UInt` | Active-high data byte mask |
 | `bank` | Output | `UInt` | Bank address |
