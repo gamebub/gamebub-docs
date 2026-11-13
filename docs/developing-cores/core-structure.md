@@ -83,7 +83,7 @@ val io = IO(new Bundle {
     )
     val audio = new AudioV0()
     val host = new HostV0()
-    val input = new InputV0()
+    val input = new InputBasicV0()
 })
 ```
 

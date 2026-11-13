@@ -26,7 +26,8 @@ class MyCore extends Module with Core {
 | `video`       | `VideoV0`            | **Yes** |
 | `host`        | `HostV0`             | **Yes** |
 | `audio`       | `AudioV0`            | No      |
-| `input`       | `InputV0`            | No      |
+| `input`       | `InputBasicV0`       | No      |
+|               | `InputExtendedV0`    | No      |
 | `vibrate`     | `VibrateV0`          | No      |
 | `cartridge`   | `CartridgePortV0`    | No      |
 | `link`        | `LinkPortV0`         | No      |
@@ -136,11 +137,21 @@ The sample rate is always 48000 Hz, so the core should update `left` and `right`
 | `right` | Output | `SInt(16.W)` | 16-bit signed PCM audio sample for the right channel |
 
 
-## Input (`input: InputV0`)
+## Input (`input: InputBasicV0` or `InputExtendedV0`)
 
-**Optional.** This interface allows the core to receive button input. Each button signal is active-high and synchronized into the system clock domain.
+**Optional.** This interface allows the core to receive player input. All input signals are synchronized into the system clock domain, and button signals are active-high.
 
-### Port Signals
+Multiple interfaces are available, depending on the input needs of the core. At most one interface can be selected.
+
+Button presses are gated by core focus: button input is suppressed when the user is navigating the in-core menu.
+
+### Basic Input (`InputBasicV0`)
+
+This interface offers 12 digital buttons (matching the built-in buttons). All gamepads connected through the Dock are merged together into a single set of buttons.
+
+This is a simpler interface for cores that don't require analog sticks / triggers, and don't require multiple independent gamepads.
+
+#### Port Signals
 
 | Signal | Direction | Type | Description |
 | :----- | :-------- | :--- | :---------- |
@@ -156,6 +167,56 @@ The sample rate is always 48000 Hz, so the core should update `left` and `right`
 | `buttons.r` | Input | `Bool` | Shoulder button 'R' |
 | `buttons.start` | Input | `Bool` | Menu button 'Start' |
 | `buttons.select` | Input | `Bool` | Menu button 'Select' |
+
+### Extended Input (`InputExtendedV0`)
+
+This interface offers up to 4 independent gamepad slots. Each slot has its own digital buttons, analog sticks, and analog triggers.
+
+When the device is not docked, `slots(0)` is a gamepad that represents the built-in buttons.
+
+When the device is docked, each slot represents a different gamepad connected to the Dock. When a controller connects, it's assigned the lowest free slot (0 to 3), and keeps its slot assignment until it disconnects.
+
+#### Parameters
+
+* `numSlots`: Number of input slots to use, from `1` to `4` (default: `1`).
+
+#### `InputExtendedV0.DeviceType` Enum
+
+* `None = 0`: no device in this slot
+* `Handheld = 1`: built-in handheld controls
+* `DigitalGamepad = 2`: external gamepad without analog sticks
+* `AnalogGamepad = 3`: external gamepad with analog sticks
+
+#### Port Signals
+
+For each slot `i` (from `0` to `numSlots - 1`):
+
+| Signal | Direction | Type | Description |
+| :----- | :-------- | :--- | :---------- |
+| `slots(i).active` | Input | `Bool` | High when a device is present in this slot (`deviceType =/= DeviceType.None`) |
+| `slots(i).deviceType` | Input | `InputExtendedV0.DeviceType` | Connected device type |
+| `slots(i).buttons.a` | Input | `Bool` | Action button 'A' |
+| `slots(i).buttons.b` | Input | `Bool` | Action button 'B' |
+| `slots(i).buttons.x` | Input | `Bool` | Action button 'X' |
+| `slots(i).buttons.y` | Input | `Bool` | Action button 'Y' |
+| `slots(i).buttons.up` | Input | `Bool` | D-Pad button 'Up' |
+| `slots(i).buttons.down` | Input | `Bool` | D-Pad button 'Down' |
+| `slots(i).buttons.left` | Input | `Bool` | D-Pad button 'Left' |
+| `slots(i).buttons.right` | Input | `Bool` | D-Pad button 'Right' |
+| `slots(i).buttons.l1` | Input | `Bool` | Shoulder button 'L1' |
+| `slots(i).buttons.r1` | Input | `Bool` | Shoulder button 'R1' |
+| `slots(i).buttons.l2` | Input | `Bool` | Shoulder / trigger button 'L2' |
+| `slots(i).buttons.r2` | Input | `Bool` | Shoulder / trigger button 'R2' |
+| `slots(i).buttons.l3` | Input | `Bool` | Left stick click 'L3' |
+| `slots(i).buttons.r3` | Input | `Bool` | Right stick click 'R3' |
+| `slots(i).buttons.start` | Input | `Bool` | Menu button 'Start' |
+| `slots(i).buttons.select` | Input | `Bool` | Menu button 'Select' |
+| `slots(i).analog.leftX` | Input | `SInt(8.W)` | Left stick X axis (`-127` left to `+127` right, centered at `0`) |
+| `slots(i).analog.leftY` | Input | `SInt(8.W)` | Left stick Y axis (`-127` up to `+127` down, centered at `0`) |
+| `slots(i).analog.rightX` | Input | `SInt(8.W)` | Right stick X axis (`-127` left to `+127` right, centered at `0`) |
+| `slots(i).analog.rightY` | Input | `SInt(8.W)` | Right stick Y axis (`-127` up to `+127` down, centered at `0`) |
+| `slots(i).analog.leftTrigger` | Input | `UInt(8.W)` | Left analog trigger (`0` released to `255` fully pressed) |
+| `slots(i).analog.rightTrigger` | Input | `UInt(8.W)` | Right analog trigger (`0` released to `255` fully pressed) |
 
 
 ## Vibrate (`vibrate: VibrateV0`)
