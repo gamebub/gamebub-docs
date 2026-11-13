@@ -14,6 +14,8 @@ The framework is a library that abstracts over hardware, implements critical sys
 
 Because the framework implements critical system functionality, the framework itself must not be modified. This also helps preserve backwards compatibility as hardware and software change. If there's a missing interface, please file feature requests (or make contributions) to the Game Bub project.
 
+While the Game Bub HDL source code is licensed under `CERN-OHL-S-2.0`, using the `net.gamebub.framework` package as an unmodified whole through its documented interfaces also grants permission under `CERN-OHL-W-2.0`, or you may use, modify, and distribute the framework under `GPL-2.0-or-later` (for example, when porting GPL-licensed FPGA cores).
+
 The framework is written in a mix of the [Chisel HDL](https://www.chisel-lang.org/) and Verilog, although no knowledge of Chisel is required to use it. Cores may be written entirely in Verilog or VHDL.
 
 ## Hardware Overview
@@ -38,6 +40,7 @@ The framework takes care of scaling the core video to the display, or an externa
 
 * Xilinx Vivado 2023.2 or later, with support for Artix-7 FPGAs
 * Python 3.12 or later
+* Game Bub handheld firmware `v1.1` or later
 
 The framework is developed on Linux. Vivado supports Windows as well, although this flow hasn't been tested.
 
