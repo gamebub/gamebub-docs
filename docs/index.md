@@ -24,6 +24,7 @@ title: Introduction
 * Load and play homebrew ROM files from a microSD card (with built-in support for rumble, clock, accelerometer, and gyroscope)
 * Multiplayer link cable functionality
 * Custom, from-scratch Game Boy, and Game Boy Advance FPGA cores with great game compatibility
+* Run third-party FPGA cores from a microSD card (in firmware `v1.1+`)
 * 14+ hour battery life
 * Video output to TV or monitor via custom dock
 * **Open-source**: you can build or modify your own!

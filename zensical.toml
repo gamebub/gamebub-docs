@@ -24,6 +24,7 @@ nav = [
   { "User Guide" = [
     "user-guide/getting-started.md",
     "user-guide/playing-games.md",
+    "user-guide/third-party-cores.md",
     "user-guide/settings.md",
     "user-guide/tools.md",
     "user-guide/dock.md",

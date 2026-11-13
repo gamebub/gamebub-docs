@@ -44,7 +44,7 @@
 
     Game Bub comes with Game Boy / Game Boy Color, and Game Boy Advance cores built-in.
 
-    A future firmware update will add the ability to load custom cores, possibly for other systems.
+    Starting with firmware `v1.1`, you can also load third-party FPGA cores from a microSD card (see [Third-party cores](/user-guide/third-party-cores/) and [Developing Cores](/developing-cores/overview/)).
 
 ??? question "Is Game Bub 100% accurate?"
 
