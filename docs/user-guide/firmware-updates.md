@@ -6,6 +6,11 @@ other improvements.
 The Game Bub Handheld and Dock can both be updated over USB by connecting them to a computer
 with a data-capable USB cable.
 
+!!! note
+
+    If you use a Game Bub Dock, be sure to update your Dock firmware too!
+
+
 ## Handheld
 
 You can find the latest update on the [GitHub release page](https://github.com/elipsitz/gamebub/releases).

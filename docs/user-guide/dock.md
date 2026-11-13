@@ -1,6 +1,6 @@
 # Dock
 
-The Game Bub Dock allows you to connect your Game Bub to an external TV and play on a big screen. It also adds support for external wireless controllers.
+The Game Bub Dock allows you to connect your Game Bub to an external TV and play on a big screen. It also adds support for external wireless and some wired USB controllers.
 
 You can purchase a Dock from [Crowd Supply](https://www.crowdsupply.com/second-bedroom/game-bub#products).
 
@@ -48,3 +48,9 @@ The Dock also has support for some wired USB controllers (and wireless controlle
 * Other controllers and dongles that use the XInput protocol
 
 To use a wired USB controller, simply plug it into one of the USB-A ports on the rear.
+
+## Dock without an external display
+
+You can also enable the "Use built-in screen when docked" option, under "Settings -> Dock". When this setting is enabled, docking the Game Bub will not turn off its screen or speakers, and external displays will not work.
+
+This is useful if you're primarily using the dock as a stand, or to add external controller support only.
