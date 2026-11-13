@@ -8,7 +8,16 @@ To play a Game Boy, Game Boy Color, or Game Boy Advance game, insert the game ca
 
     To avoid data loss, only insert and remove game cartridges while the device is off or in the Main Menu.
 
-Press <span class="btn btn-home">Home</span> to enter the in-game menu, where you can reset the game or return to the Main Menu. Make sure to save your progress in the game before exiting!
+Press <span class="btn btn-home">Home</span> to enter the in-game menu, where you can:
+* **Return** to the game
+* Adjust core **Settings**
+* **Reset** the core
+* **Exit Core**
+
+!!! warning
+
+    Core save files and settings are saved back to the microSD card when you select **Exit Core** or power off the device. Make sure to save your progress in-game before exiting the core. Do not remove the microSD card while the device is on.
+
 
 <figure markdown="span" style="image-rendering: pixelated;">
   ![Screenshot: In-game menu](screenshots/ui-game-menu.png) <figcaption>In-game menu</figcaption>
