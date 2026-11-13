@@ -128,6 +128,7 @@ Game Bub is also built on top of numerous pieces of open-source software.
 * [embedded-hal-bus](https://github.com/rust-embedded/embedded-hal): Licensed under Apache-2.0 OR MIT
 * [embedded-hal-nb](https://github.com/rust-embedded/embedded-hal): Licensed under Apache-2.0 OR MIT
 * [embedded-io](https://github.com/rust-embedded/embedded-hal): Licensed under Apache-2.0 OR MIT
+* [embedded-io-adapters](https://github.com/rust-embedded/embedded-hal): Licensed under Apache-2.0 OR MIT
 * [embedded-io-async](https://github.com/rust-embedded/embedded-hal): Licensed under Apache-2.0 OR MIT
 * [embedded-svc](https://github.com/esp-rs/embedded-svc): Licensed under Apache-2.0 OR MIT
 * [embuild](https://github.com/ivmarkov/embuild): Licensed under Apache-2.0 OR MIT
@@ -184,6 +185,7 @@ Game Bub is also built on top of numerous pieces of open-source software.
 * [hash32](https://github.com/japaric/hash32): Licensed under Apache-2.0 OR MIT
 * [hashbrown](https://github.com/rust-lang/hashbrown): Licensed under Apache-2.0 OR MIT
 * [heapless](https://github.com/rust-embedded/heapless): Licensed under Apache-2.0 OR MIT
+* [heatshrink-lib](https://github.com/jcdubois/heatshrink-rs): Licensed under ISC
 * [heck](https://github.com/withoutboats/heck): Licensed under Apache-2.0 OR MIT
 * [hex](https://github.com/KokaKiwi/rust-hex): Licensed under Apache-2.0 OR MIT
 * [home](https://github.com/rust-lang/cargo): Licensed under Apache-2.0 OR MIT
@@ -239,6 +241,7 @@ Game Bub is also built on top of numerous pieces of open-source software.
 * [minimal-lexical](https://github.com/Alexhuszagh/minimal-lexical): Licensed under Apache-2.0 OR MIT
 * [miniz_oxide](https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide): Licensed under Apache-2.0 OR MIT OR Zlib
 * [moxcms](https://github.com/awxkee/moxcms.git): Licensed under Apache-2.0 OR BSD-3-Clause
+* [natord](https://github.com/lifthrasiir/rust-natord): Licensed under MIT
 * [nb](https://github.com/rust-embedded/nb): Licensed under Apache-2.0 OR MIT
 * [new_debug_unreachable](https://github.com/mbrubeck/rust-debug-unreachable): Licensed under MIT
 * [nix](https://github.com/nix-rust/nix): Licensed under MIT
