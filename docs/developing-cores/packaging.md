@@ -52,7 +52,8 @@ One optional file is `settings.json`, which allows your core to have user-adjust
 				{"label": "Red",   "value": "0xFF0000"},
 				{"label": "Green", "value": "0x00FF00"},
 				{"label": "Blue",  "value": "0x0000FF"}
-			]
+			],
+			"default": "0xFFFFFF"
 		}
 	]
 }
