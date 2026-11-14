@@ -13,7 +13,9 @@ These cores have been developed by the community. Note that the information belo
 | [neutralinsomniac&#47;gamebub](https://github.com/neutralinsomniac/gamebub) |  |  |  |  |  |
 | [Retro&#45;Bub&#46;GG](https://github.com/florin-byte/gamebub-gg) | Game Gear | MiSTer&#44; Florin | [v0.4.0](https://github.com/florin-byte/gamebub-gg/releases/tag/v0.4.0) |  | GPL&#45;3&#46;0&#45;only |
 | [Retro&#45;Bub&#46;Lynx](https://github.com/florin-byte/gamebub-lynx) | Atari Lynx | MiSTer&#44; Florin | [v0.2.0](https://github.com/florin-byte/gamebub-lynx/releases/tag/v0.2.0) |  | GPL&#45;2&#46;0 |
-| [Tsudakawa&#47;PcEngine&#45;TG&#45;16&#45;Mister&#45;port&#45;for&#45;Game&#45;Bub](https://github.com/Tsudakawa/PcEngine-TG-16-Mister-port-for-Game-Bub) |  |  | [v1.0.2](https://github.com/Tsudakawa/PcEngine-TG-16-Mister-port-for-Game-Bub/releases/tag/v1.0.2) |  |  |
+| [ToadyM&#46;PcEngine](https://github.com/Tsudakawa/PcEngine-TG-16-Mister-port-for-Game-Bub) | PC Engine | MiSTer &#47; Toady M | [v1.0.2](https://github.com/Tsudakawa/PcEngine-TG-16-Mister-port-for-Game-Bub/releases/tag/v1.0.2) |  | GPL&#45;2&#46;0 |
+| [Toadym&#46;Tecmo](https://github.com/Tsudakawa/Tecmo-Arcade-Classics-Game-bub-core-) | Tecmo Arcade | MiSTer &#47; Toadym |  |  | GPL&#45;3&#46;0&#45;or&#45;later |
+| [Tsudakawa&#47;Sega&#45;System&#45;1&#45;game&#45;bub&#45;core&#45;](https://github.com/Tsudakawa/Sega-System-1-game-bub-core-) |  |  |  |  |  |
 | [Wenwald&#47;gamebub&#45;2600](https://github.com/Wenwald/gamebub-2600) |  |  | [v1.2.1](https://github.com/Wenwald/gamebub-2600/releases/tag/v1.2.1) |  |  |
 <!-- END AUTOGEN -->
 
