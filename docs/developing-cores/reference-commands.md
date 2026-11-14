@@ -70,6 +70,7 @@ One parameter: the file ID, defined in `files.json`. No results.
 Called by the host when it has finished writing the file.
 
 Three parameters:
+
 1. The file ID
 2. The total size of the file transferred, in bytes
 3. Reserved (0)
@@ -102,9 +103,11 @@ All Core -> Host file commands return a status code as their first result word:
 Called by the core to get the size (in bytes) of an on-demand file.
 
 One parameter:
+
 1. The file ID (as defined in `files.json`)
 
 Three results:
+
 1. Status (`FileStatus*`)
 2. Lower 32 bits of the file size, in bytes
 3. Upper 32 bits of the file size, in bytes
@@ -113,11 +116,13 @@ Three results:
 Called by the core to resize an on-demand file. May shrink (truncate) or grow (zero-fill) the file. The file must not be `read_only`.
 
 Three parameters:
+
 1. The file ID (as defined in `files.json`)
 2. Lower 32 bits of the new size, in bytes
 3. Upper 32 bits of the new size, in bytes
 
 One result:
+
 1. Status (`FileStatus*`)
 
 ### `FileRead` (`0x0402`)
@@ -130,6 +135,7 @@ The host writes the data over `host.mem` before raising `done`, so the core's me
 Note that there is a performance penalty when switching between different files with `FileRead` and `FileWrite`: for best performance, do as much I/O on one file as possible before switching to another.
 
 Five parameters:
+
 1. The file ID (as defined in `files.json`)
 2. Core memory destination address
 3. Lower 32 bits of the file offset, in bytes
@@ -137,6 +143,7 @@ Five parameters:
 5. Number of bytes to read
 
 Two results:
+
 1. Status (`FileStatus*`)
 2. Number of bytes transferred
 
@@ -148,6 +155,7 @@ The host reads the data over `host.mem` before raising `done`, so the core's mem
 Note that there is a performance penalty when switching between different files with `FileRead` and `FileWrite`: for best performance, do as much I/O on one file as possible before switching to another.
 
 Five parameters:
+
 1. The file ID (as defined in `files.json`)
 2. Core memory source address
 3. Lower 32 bits of the file offset, in bytes
@@ -155,6 +163,7 @@ Five parameters:
 5. Number of bytes to write
 
 Two results:
+
 1. Status (`FileStatus*`)
 2. Number of bytes transferred
 
@@ -164,7 +173,9 @@ Called by the core to flush buffered writes for a file to the microSD card.
 Note that the host will already persist writes when exiting the core or powering off. However, this command provides some additional guarantees in case of sudden power loss or crash.
 
 One parameter:
+
 1. The file ID (as defined in `files.json`)
 
 One result:
+
 1. Status (`FileStatus*`)

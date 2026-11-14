@@ -9,6 +9,7 @@ To play a Game Boy, Game Boy Color, or Game Boy Advance game, insert the game ca
     To avoid data loss, only insert and remove game cartridges while the device is off or in the Main Menu.
 
 Press <span class="btn btn-home">Home</span> to enter the in-game menu, where you can:
+
 * **Return** to the game
 * Adjust core **Settings**
 * **Reset** the core
