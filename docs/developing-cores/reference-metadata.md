@@ -82,9 +82,9 @@ Any field marked as "Hex" is either a JSON number or a hexadecimal string, e.g. 
 For each entry in `files`:
 
 * Exactly one of `filename`, `user_selected: true`, or `dependent_on_0: true` must be set
-  * `filename`: it is loaded relative to the core directory (e.g., `/cores/Demo.DemoCore/asset.bin`)
-  * `user_selected: true`: The user will be prompted to select a file, or no file if `optional: true`. If no file is selected, the file will not be loaded or saved when the core starts/stops.
-  * `dependent_on_0: true`: The file derives its path from File 0 by replacing its extension with the single entry in `extensions` (for example, `/some-path/data.bin` -> `/some-path/data.sav`). If File 0 is not selected (or "Run Cartridge" is selected), neither File 0 nor any file dependent on File 0 will be loaded or saved.
+    * `filename`: it is loaded relative to the core directory (e.g., `/cores/Demo.DemoCore/asset.bin`)
+    * `user_selected: true`: The user will be prompted to select a file, or no file if `optional: true`. If no file is selected, the file will not be loaded or saved when the core starts/stops.
+    * `dependent_on_0: true`: The file derives its path from File 0 by replacing its extension with the single entry in `extensions` (for example, `/some-path/data.bin` -> `/some-path/data.sav`). If File 0 is not selected (or "Run Cartridge" is selected), neither File 0 nor any file dependent on File 0 will be loaded or saved.
 * `exact_size` and `max_size` cannot both be provided
 * `address` must be 4-byte aligned, and cannot overlap the reserved address space. Ignored for on-demand files.
 * Transfer speed: the firmware will transfer the file no higher than this speed, which must be at least 1000 KB/s.
