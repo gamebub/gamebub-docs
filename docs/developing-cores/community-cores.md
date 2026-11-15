@@ -9,6 +9,7 @@ These cores have been developed by the community. Note that the information belo
 | [alanswx&#46;ColecoVision](https://github.com/alanswx/ColecoVision_GameBub) | ColecoVision | Alan Steremberg | [v0.1.0](https://github.com/alanswx/ColecoVision_GameBub/releases/tag/v0.1.0) |  | GPL&#45;3&#46;0 |
 | [alanswx&#46;MCR](https://github.com/alanswx/MCR_GameBub) | Bally Midway MCR | Alan Steremberg | [v0.6.0](https://github.com/alanswx/MCR_GameBub/releases/tag/v0.6.0) |  | See source notices |
 | [alanswx&#46;Universal](https://github.com/alanswx/Universal_GameBub) | Universal Arcade | Alan Steremberg |  |  | See component notices |
+| [bobbobbaobab&#47;gamebub&#45;mister&#45;gba](https://github.com/bobbobbaobab/gamebub-mister-gba) |  |  | [v0.1.1](https://github.com/bobbobbaobab/gamebub-mister-gba/releases/tag/v0.1.1) |  |  |
 | [danifunker&#46;MacLC](https://github.com/danifunker/MacLC_GameBub) | Macintosh LC | Dani Sarfati | [v0.1.0](https://github.com/danifunker/MacLC_GameBub/releases/tag/v0.1.0) |  | GPL&#45;3&#46;0&#45;or&#45;later |
 | [neutralinsomniac&#47;gamebub](https://github.com/neutralinsomniac/gamebub) |  |  |  |  |  |
 | [Retro&#45;Bub&#46;GG](https://github.com/florin-byte/gamebub-gg) | Game Gear | MiSTer&#44; Florin | [v0.4.0](https://github.com/florin-byte/gamebub-gg/releases/tag/v0.4.0) |  | GPL&#45;3&#46;0&#45;only |
