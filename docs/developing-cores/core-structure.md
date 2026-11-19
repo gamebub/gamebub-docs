@@ -15,7 +15,7 @@ git clone --recurse-submodules https://github.com/gamebub/core-example
 ## Key Components
 
 * `framework/`: The Game Bub Framework, as a Git submodule that can be independently updated
-* `rtl/`: Directory for the core's Verilog (`.v`), SystemVerilog (`.sv`), VHDL (`.vhdl`), and constraint (`.xdc`) files
+* `rtl/`: Directory for the core's Verilog (`.v`), SystemVerilog (`.sv`), VHDL (`.vhd`, `.vhdl`), include (`.vh`, `.vinc`, `.inc`, `.svh`), memory initialization (`.mem`, `.dat`, `.hex`), and constraint (`.xdc`) files
 * `chisel/src/`: Directory for the core's Chisel code
 * `metadata/`: JSON metadata files to be packaged with the core
 * `mill`: [Mill](https://mill-build.org) bootstrap script, for running framework build commands
@@ -119,7 +119,7 @@ bindExtModule("demo_core", io, Map(
 ))
 ```
 
-Here, `bindExtModule` is used to bind the `io` variable (the complete interface for the core) to an instantiation of the Verilog module called `demo_core`. The framework automatically includes `.v`, `.sv`, `.vhdl`, and `.xdc` files added anywhere under the top-level `rtl/` directory.
+Here, `bindExtModule` is used to bind the `io` variable (the complete interface for the core) to an instantiation of the Verilog module called `demo_core`. The framework automatically includes HDL sources (`.v`, `.sv`, `.vhd`, `.vhdl`), include headers (`.vh`, `.vinc`, `.inc`, `.svh`), memory initialization files (`.mem`, `.dat`, `.hex`), and constraint files (`.xdc`) added anywhere under the top-level `rtl/` directory (matched case-insensitively).
 
 `bindExtModule` also provides the means to pass parameters to the module (e.g. `DISPLAY_DIVIDER` here), and while the core is being built, it also **automatically generates a Verilog template** to use, based on the configuration of the core. This template is printed when building the core.
 
