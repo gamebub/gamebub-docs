@@ -18,6 +18,7 @@ Contains top-level information about the core and a list of FPGA bitstream files
 
 | Field | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
+| `min_firmware` | String | **Required** | Minimum handheld firmware version required to run the core |
 | `metadata` | Object | **Required** | Core information |
 | `metadata.id` | String | **Required** | Unique core identifier (e.g. `"Demo.DemoCore"`), max 32 chars, must match directory name under `/cores/` |
 | `metadata.name` | String | **Required** | Human-readable core name, non-empty, max 32 chars |
@@ -33,10 +34,18 @@ Contains top-level information about the core and a list of FPGA bitstream files
 | `hardware.cartridge_enable` | String | `"no"` | Whether the cartridge slot should be enabled (`"no"`, `"yes"`, `"if_selected"`) |
 | `hardware.cartridge_selectable` | Boolean | `false` | Whether the user can select "Run Cartridge" |
 
+`min_firmware` uses the format `MAJOR.MINOR[.PATCH]`, optionally followed by a prerelease suffix. Prereleases sort before the corresponding full release. For example, in order of lowest to highest:
+
+* `1.0`
+* `1.0.1`
+* `1.1-beta3`
+* `1.1.0`
+
 ### Example
 
 ``` json
 {
+  "min_firmware": "1.1.0",
   "metadata": {
     "id": "Demo.DemoCore",
     "name": "Demo Core",
@@ -55,11 +64,11 @@ Contains top-level information about the core and a list of FPGA bitstream files
 
 Optional. Defines data files (e.g. ROMs, save files, assets) that need to be loaded into and/or saved out of the core.
 
-A maximum of 8 files may be defined.
+A maximum of 16 files may be defined.
 
 | Field | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `files` | Array | **Required** | List of files, max 8 entries |
+| `files` | Array | **Required** | List of files, max 16 entries |
 | `files[].id` | Integer | **Required** | Unique file ID (`0` to `65535`) |
 | `files[].label` | String | **Required** | Non-empty human-readable file label, max 16 chars |
 | `files[].filename` | String | `null` | Optional fixed safe relative path in the core directory, max 32 chars |

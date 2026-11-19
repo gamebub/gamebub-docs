@@ -22,6 +22,7 @@ The only required file is `core.json`, which provides basic information about yo
 
 ``` json title="core.json"
 {
+	"min_firmware": "1.1.0",
 	"metadata": {
 		"id": "Demo.DemoCore",
 		"name": "Demo Core",
@@ -32,6 +33,8 @@ The only required file is `core.json`, which provides basic information about yo
 	]
 }
 ```
+
+`min_firmware` specifies the minimum handheld firmware version required to run the core.
 
 The `metadata` section gives the `id` of the core (a short name, of the format `Author.Name`), the user-visible `name`, and the user-visible `author`. There are other available keys for providing other information.
 
