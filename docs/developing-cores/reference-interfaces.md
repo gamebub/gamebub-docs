@@ -28,7 +28,6 @@ class MyCore extends Module with Core {
 | `audio`       | `AudioV0`            | No      |
 | `input`       | `InputBasicV0`       | No      |
 |               | `InputExtendedV0`    | No      |
-| `vibrate`     | `VibrateV0`          | No      |
 | `cartridge`   | `CartridgePortV0`    | No      |
 | `link`        | `LinkPortV0`         | No      |
 | `pmod`        | `PmodV0`             | No      |
@@ -147,9 +146,13 @@ Button presses are gated by core focus: button input is suppressed when the user
 
 ### Basic Input (`InputBasicV0`)
 
-This interface offers 12 digital buttons (matching the built-in buttons). All gamepads connected through the Dock are merged together into a single set of buttons.
+This interface offers 12 digital buttons (matching the built-in buttons), plus optional single-bit rumble output. All gamepads connected through the Dock are merged together into a single set of buttons.
 
 This is a simpler interface for cores that don't require analog sticks / triggers, and don't require multiple independent gamepads.
+
+#### Parameters
+
+* `hasRumble`: Whether to expose a rumble output signal (default: `false`).
 
 #### Port Signals
 
@@ -167,10 +170,13 @@ This is a simpler interface for cores that don't require analog sticks / trigger
 | `buttons.r` | Input | `Bool` | Shoulder button 'R' |
 | `buttons.start` | Input | `Bool` | Menu button 'Start' |
 | `buttons.select` | Input | `Bool` | Menu button 'Select' |
+| `rumble` | Output | `Bool` | Active-high rumble enable (only present when `hasRumble = true`) |
+
+Setting `rumble` high drives the built-in vibration motor at full intensity while undocked.
 
 ### Extended Input (`InputExtendedV0`)
 
-This interface offers up to 4 independent gamepad slots. Each slot has its own digital buttons, analog sticks, and analog triggers.
+This interface offers up to 4 independent gamepad slots. Each slot has its own digital buttons, analog sticks, analog triggers, and optional dual-motor rumble outputs.
 
 When the device is not docked, `slots(0)` is a gamepad that represents the built-in buttons.
 
@@ -179,6 +185,7 @@ When the device is docked, each slot represents a different gamepad connected to
 #### Parameters
 
 * `numSlots`: Number of input slots to use, from `1` to `4` (default: `1`).
+* `hasRumble`: Whether to expose per-slot dual-motor rumble outputs (default: `false`).
 
 #### `InputExtendedV0.DeviceType` Enum
 
@@ -217,23 +224,10 @@ For each slot `i` (from `0` to `numSlots - 1`):
 | `slots(i).analog.rightY` | Input | `SInt(8.W)` | Right stick Y axis (`-127` up to `+127` down, centered at `0`) |
 | `slots(i).analog.leftTrigger` | Input | `UInt(8.W)` | Left analog trigger (`0` released to `255` fully pressed) |
 | `slots(i).analog.rightTrigger` | Input | `UInt(8.W)` | Right analog trigger (`0` released to `255` fully pressed) |
+| `rumble(i).strong` | Output | `UInt(8.W)` | Low-frequency / large motor intensity, `0` off to `255` max (only present when `hasRumble = true`) |
+| `rumble(i).weak` | Output | `UInt(8.W)` | High-frequency / small motor intensity, `0` off to `255` max (only present when `hasRumble = true`) |
 
-
-## Vibrate (`vibrate: VibrateV0`)
-
-**Optional.** This interface allows the core to produce haptic feedback (vibration).
-
-The `mode` can be either:
-
-* `Off` (`0b00`)
-* `On`  (`0b01`)
-* `Brake` (`0b10`)
-
-### Port Signals
-
-| Signal | Direction | Type | Description |
-| :----- | :-------- | :--- | :---------- |
-| `mode` | Output | `VibrateV0.Mode()` | Output to the vibration motor |
+When `hasRumble = true` and the device is undocked, slot `0` drives the built-in vibration motor. Docked gamepad rumble will be added in a future firmware update.
 
 
 ## Cartridge Port (`cartridge: CartridgePortV0`)
