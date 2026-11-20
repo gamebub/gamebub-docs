@@ -334,6 +334,7 @@ Game Bub is also built on top of numerous pieces of open-source software.
 * [softbuffer](https://github.com/rust-windowing/softbuffer): Licensed under Apache-2.0 OR MIT
 * [spin_on](None): Licensed under Apache-2.0 OR MIT
 * [stable_deref_trait](https://github.com/storyyeller/stable_deref_trait): Licensed under Apache-2.0 OR MIT
+* [static_cell](https://github.com/embassy-rs/static-cell): Licensed under Apache-2.0 OR MIT
 * [strict-num](https://github.com/RazrFalcon/strict-num): Licensed under MIT
 * [strum](https://github.com/Peternator7/strum): Licensed under MIT
 * [strum_macros](https://github.com/Peternator7/strum): Licensed under MIT
