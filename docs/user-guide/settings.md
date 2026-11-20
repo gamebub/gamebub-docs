@@ -27,6 +27,12 @@ If the Game Bub is plugged into a Dock, it will also show information about the 
 
         Due to a hardware limitation, enabling this feature will drain approximately 1% of your battery per day while powered off.
 
+* **Auto-dim screen on inactivity**: automatically dim the built-in screen after a period of inactivity
+    * *1 min* (default)
+    * *3 min*
+    * *5 min*
+    * *Never*
+
 ### Dock
 
 This section controls behavior when the Game Bub is inserted into a Dock.
