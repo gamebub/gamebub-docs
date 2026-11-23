@@ -1,0 +1,33 @@
+name: Update Community Cores
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-and-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: python3 scripts/corelist.py
+      - name: commit and push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "automated: update community-cores.md"
+            git push
+            gh workflow run docs.yml --ref main
+          else
+            echo "No changes detected. Skipping commit."
+          fi

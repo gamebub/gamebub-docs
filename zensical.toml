@@ -37,6 +37,7 @@ nav = [
     "developing-cores/reference-interfaces.md",
     "developing-cores/reference-commands.md",
     "developing-cores/reference-metadata.md",
+    "developing-cores/community-cores.md",
   ] },
   { "Frequently Asked Questions" = "faq.md" },
   { "Copyrights & Licenses" = "copyrights-and-licenses.md" },
