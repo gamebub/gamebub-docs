@@ -1,0 +1,161 @@
+{
+  "alanswx/Apple-IIgs_GameBub": {
+    "id": "alanswx.AppleIIgs",
+    "latest": "v0.1.0",
+    "latest_beta": null,
+    "metadata": {
+      "id": "alanswx.AppleIIgs",
+      "name": "Apple IIgs",
+      "author": "Alan Steremberg",
+      "version": "0.0.1",
+      "license": "GPL-3.0"
+    }
+  },
+  "alanswx/ColecoVision_GameBub": {
+    "id": "alanswx.ColecoVision",
+    "latest": "v0.1.0",
+    "latest_beta": null,
+    "metadata": {
+      "id": "alanswx.ColecoVision",
+      "name": "ColecoVision",
+      "author": "Alan Steremberg",
+      "version": "0.1.0",
+      "license": "GPL-3.0"
+    }
+  },
+  "alanswx/MCR_GameBub": {
+    "id": "alanswx.MCR",
+    "latest": "v0.6.0",
+    "latest_beta": null,
+    "metadata": {
+      "id": "alanswx.MCR",
+      "name": "Bally Midway MCR",
+      "author": "Alan Steremberg",
+      "version": "0.6.0",
+      "license": "See source notices"
+    }
+  },
+  "alanswx/Universal_GameBub": {
+    "id": "alanswx.Universal",
+    "latest": null,
+    "latest_beta": null,
+    "metadata": {
+      "id": "alanswx.Universal",
+      "name": "Universal Arcade",
+      "author": "Alan Steremberg",
+      "version": "0.2.0-test1",
+      "license": "See component notices"
+    }
+  },
+  "apolkosnik/3DO_GameBub": {
+    "id": "apolkosnik.3DO",
+    "latest": null,
+    "latest_beta": null,
+    "metadata": {
+      "id": "apolkosnik.3DO",
+      "name": "3DO",
+      "author": "srg320, apolkosnik",
+      "version": "0.11.0",
+      "url": "https://github.com/apolkosnik/3DO_GameBub",
+      "license": "GPL-3.0-or-later"
+    }
+  },
+  "apolkosnik/Minimig_GameBub": {
+    "id": "apolkosnik.Minimig",
+    "latest": "v0.9.0",
+    "latest_beta": null,
+    "metadata": {
+      "id": "apolkosnik.Minimig",
+      "name": "Minimig (Amiga)",
+      "author": "Minimig team, apolkosnik",
+      "version": "0.9.0",
+      "release_date": "2026-11-22",
+      "url": "https://github.com/apolkosnik/Minimig_GameBub",
+      "license": "GPL-3.0-or-later"
+    }
+  },
+  "bobbobbaobab/gamebub-mister-gba": {
+    "id": "bobbobbaobab/gamebub-mister-gba",
+    "latest": "v0.1.2",
+    "latest_beta": null,
+    "metadata": {}
+  },
+  "danifunker/MacLC_GameBub": {
+    "id": "danifunker.MacLC",
+    "latest": "v0.1.0",
+    "latest_beta": null,
+    "metadata": {
+      "id": "danifunker.MacLC",
+      "name": "Macintosh LC",
+      "author": "Dani Sarfati",
+      "version": "0.1.0",
+      "license": "GPL-3.0-or-later"
+    }
+  },
+  "florin-byte/gamebub-gg": {
+    "id": "Retro-Bub.GG",
+    "latest": "v0.5.1",
+    "latest_beta": null,
+    "metadata": {
+      "id": "Retro-Bub.GG",
+      "name": "Game Gear",
+      "author": "MiSTer, Florin",
+      "version": "0.1.0",
+      "license": "GPL-3.0-only"
+    }
+  },
+  "florin-byte/gamebub-lynx": {
+    "id": "Retro-Bub.Lynx",
+    "latest": "v0.3.0",
+    "latest_beta": null,
+    "metadata": {
+      "id": "Retro-Bub.Lynx",
+      "name": "Atari Lynx",
+      "author": "MiSTer, Florin",
+      "version": "0.1.0",
+      "license": "GPL-2.0"
+    }
+  },
+  "neutralinsomniac/gamebub": {
+    "id": "neutralinsomniac/gamebub",
+    "latest": null,
+    "latest_beta": null,
+    "metadata": {}
+  },
+  "Tsudakawa/PcEngine-TG-16-Mister-port-for-Game-Bub": {
+    "id": "ToadyM.PcEngine",
+    "latest": "v1.0.2",
+    "latest_beta": null,
+    "metadata": {
+      "id": "ToadyM.PcEngine",
+      "name": "PC Engine",
+      "author": "MiSTer / Toady M",
+      "version": "1.0.1-sgx",
+      "license": "GPL-2.0"
+    }
+  },
+  "Tsudakawa/Sega-System-1-game-bub-core-": {
+    "id": "Tsudakawa/Sega-System-1-game-bub-core-",
+    "latest": null,
+    "latest_beta": null,
+    "metadata": {}
+  },
+  "Tsudakawa/Tecmo-Arcade-Classics-Game-bub-core-": {
+    "id": "Toadym.Tecmo",
+    "latest": null,
+    "latest_beta": null,
+    "metadata": {
+      "id": "Toadym.Tecmo",
+      "name": "Tecmo Arcade",
+      "author": "MiSTer / Toadym",
+      "version": "0.1.1",
+      "license": "GPL-3.0-or-later"
+    }
+  },
+  "Wenwald/gamebub-2600": {
+    "id": "Wenwald/gamebub-2600",
+    "latest": "v1.3.0",
+    "latest_beta": null,
+    "metadata": {}
+  }
+}

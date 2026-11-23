@@ -3,17 +3,20 @@
 import json
 import os
 import re
+import sys
 import urllib.request
 from urllib.error import HTTPError, URLError
+from urllib.parse import quote, urlsplit, urlunsplit
 
 TAG = re.compile(r"^v(\d+)\.(\d+)\.(\d+)(?:-beta(\d+))?$")  # v1.2.3, v1.2.3-beta4
-NOESCAPE = re.compile(r"[A-Za-z0-9 ]")
-OUTPUT = "docs/developing-cores/community-cores.md"
+NOESCAPE = re.compile(r"[ A-Za-z0-9./]")
+OUTPUT_MD = "docs/developing-cores/community-cores.md"
+OUTPUT_JSON = "docs/developing-cores/community-cores.json"
 
 
 def main():
     token = os.environ["GH_TOKEN"]
-    infos = []
+    infos = {}
 
     repos = api("search/repositories?q=topic:game-bub-core", token=token)
     assert not repos["incomplete_results"]
@@ -23,8 +26,8 @@ def main():
     repos.add("danifunker/MacLC_GameBub")
     repos.add("neutralinsomniac/gamebub")
 
-    for repo in sorted(repos):
-        print(repo)
+    for repo in sorted(repos, key=lambda repo: repo.lower()):
+        print(repo, file=sys.stderr)
 
         latest = None
         latest_beta = None
@@ -50,62 +53,86 @@ def main():
             major, minor, patch, beta = latest_beta
             latest_beta = f"v{major}.{minor}.{patch}-beta{beta}"
 
-        ident = repo
-        system = author = license = ""
+        metadata = {}
         for ref in [latest, latest_beta, "main"]:
             if not ref:
                 continue
-            metadata = {}
             core_json = api(
                 f"repos/{repo}/contents/metadata/core.json?ref={ref}",
                 token=token,
                 headers={"Accept": "application/vnd.github.raw+json"},
             )
-            if not core_json:
-                continue
-            if isinstance(core_json, dict) and isinstance(
-                core_json.get("metadata"), dict
+            if (
+                core_json
+                and isinstance(core_json, dict)
+                and isinstance(core_json.get("metadata"), dict)
             ):
                 metadata = core_json["metadata"]
-            ident = str(metadata.get("id", repo))
-            system = str(metadata.get("name", ""))
-            author = str(metadata.get("author", ""))
-            license = str(metadata.get("license", ""))
-            break
+                break
 
-        base = f"https://github.com/{repo}"
-        link = f"[{md_escape(ident)}]({base})"
-        latest_link = latest_beta_link = ""
-        if latest:
-            latest_link = f"[{latest}]({base}/releases/tag/{latest})"
-        if latest_beta:
-            latest_beta_link = f"[{latest_beta}]({base}/releases/tag/{latest_beta})"
-        infos.append(
-            (
-                link,
-                md_escape(system),
-                md_escape(author),
-                latest_link,
-                latest_beta_link,
-                md_escape(license),
-            )
-        )
+        ident = str(metadata.get("id", repo))
+        infos[repo] = {
+            "id": ident,
+            "latest": latest,
+            "latest_beta": latest_beta,
+            "metadata": metadata,
+        }
 
-    infos.sort(key=lambda row: row[0].lower())
-    with open(OUTPUT, "r") as f:
+    with open(OUTPUT_JSON, "r") as f:
+        old_infos = json.load(f)
+
+    with open(OUTPUT_MD, "r") as f:
         content = f.read()
         header, content = content.split("<!-- BEGIN AUTOGEN -->")
         header = header.strip("\n")
         content, footer = content.split("<!-- END AUTOGEN -->")
         footer = footer.strip("\n")
-    with open(OUTPUT, "w") as f:
+
+    with open(OUTPUT_JSON, "w") as f:
+        json.dump(infos, f, indent="  ")
+        print(file=f)
+
+    with open(OUTPUT_MD, "w") as f:
         print(header, file=f)
         print(file=f)
         print("<!-- BEGIN AUTOGEN -->", file=f)
         print("| Core | System | Author | Release | Beta | License |", file=f)
         print("| :--- | :--- | :--- | :--- | :--- | :--- |", file=f)
-        for info in infos:
-            print("|", " | ".join(info), "|", file=f)
+        for repo, info in sorted(infos.items(), key=lambda row: row[1]["id"].lower()):
+            ident = info["id"]
+            latest = info["latest"]
+            latest_beta = info["latest_beta"]
+            metadata = info["metadata"]
+            base = f"https://github.com/{repo}"
+            url = str(metadata.get("url", base))
+
+            if repo not in old_infos:
+                changed = "added"
+            elif info != old_infos[repo]:
+                changed = "updated"
+            else:
+                changed = None
+            if changed:
+                if latest or latest_beta:
+                    print(f"* {changed}: {ident} ({latest or latest_beta})")
+                else:
+                    print(f"* {changed}: {ident}")
+
+            print(
+                "|",
+                " | ".join(
+                    [
+                        md_item(ident, link=url),
+                        md_item(str(metadata.get("name", ""))),
+                        md_item(str(metadata.get("author", ""))),
+                        md_item(latest, link=f"{base}/releases/tag/{latest}"),
+                        md_item(latest_beta, link=f"{base}/releases/tag/{latest_beta}"),
+                        md_item(str(metadata.get("license", ""))),
+                    ]
+                ),
+                "|",
+                file=f,
+            )
         print("<!-- END AUTOGEN -->", file=f)
         print(footer, file=f)
 
@@ -142,6 +169,27 @@ def md_escape(s):
         else:
             chars.append(f"&#{ord(ch)};")
     return "".join(chars)
+
+
+def md_item(text, *, link=None):
+    if not text:
+        return ""
+    text = md_escape(text)
+    if link:
+        link = urlsplit(link)
+        if link.scheme not in ["http", "https"]:
+            return text
+        link = urlunsplit(
+            (
+                link.scheme,
+                link.netloc,
+                quote(link.path, safe="/%"),
+                quote(link.query, safe="=&%"),
+                quote(link.fragment, safe="%"),
+            )
+        )
+        return f"[{text}]({link})"
+    return text
 
 
 if __name__ == "__main__":
