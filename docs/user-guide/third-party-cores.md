@@ -6,6 +6,8 @@
 
 You can install and run third-party FPGA cores from your microSD card.
 
+The [Game Bub Core Directory](https://cores.gamebub.net/) is a good place to find cores and stay up-to-date with the latest releases.
+
 ## Installation
 
 Download the core, and copy the entire directory to a top-level `cores` directory on the microSD card. For example, it may look like `/cores/Author.CoreName`.

@@ -63,3 +63,28 @@ One optional file is `settings.json`, which allows your core to have user-adjust
 ```
 
 This example core has a single setting, "Paddle Color", with a list of options. On core load, and when a user selects a new option in the in-game settings menu, the `value` for the option is written to the `address` using the `HostV0` memory interface.
+
+## Core Directory
+
+Once your core is packaged (and published as a GitHub release), you can list it in the [Game Bub Core Directory](https://cores.gamebub.net/).
+
+To add your core, open a pull request adding your repository to `repos.toml` in [gamebub/core-directory](https://github.com/gamebub/core-directory):
+
+```toml
+[[repos]]
+repo = "owner/repo-name"
+```
+
+Once merged, the directory automatically tracks your latest GitHub Release.
+
+### Validation
+
+Even if your core loads and runs fine on Game Bub, the directory enforces a few extra publishing requirements and rejects cores that don't meet them:
+
+* **Must be a published, stable GitHub Release:** Drafts and pre-releases (`prerelease: true`) are ignored. Only your latest valid release is indexed.
+* **Strict `.zip` layout:** `core.json` must sit at the root of the archive as `<Core ID>/core.json` or `cores/<Core ID>/core.json`. Multiple cores may be packaged in one `.zip`.
+* **`metadata.id` naming:** Must follow `Author.CoreName`, and may not be a reserved ID (such as `GameBub.*`)
+* **`metadata.version` is required:** Optional on the handheld, but required for the directory
+* **Optional metadata is validated strictly:** Optional fields (like `description`, `url`) must be valid if present
+
+When you open a PR to `repos.toml`, CI runs a dry-run sync against your repository and reports any validation warnings in the workflow summary.

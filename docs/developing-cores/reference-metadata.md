@@ -23,9 +23,10 @@ Contains top-level information about the core and a list of FPGA bitstream files
 | `metadata.id` | String | **Required** | Unique core identifier (e.g. `"Demo.DemoCore"`), max 32 chars, must match directory name under `/cores/` |
 | `metadata.name` | String | **Required** | Human-readable core name, non-empty, max 32 chars |
 | `metadata.author` | String | **Required** | Human-readable core author, non-empty, max 32 chars |
+| `metadata.description` | String | `null` | Short description of the core, max 256 chars |
 | `metadata.version` | String | `null` | Human-readable version code, max 16 chars |
 | `metadata.release_date` | String | `null` | Release date, `"YYYY-MM-DD"` |
-| `metadata.url` | String | `null` | URL to website with information, max 64 chars  |
+| `metadata.url` | String | `null` | URL to website with information, max 128 chars |
 | `metadata.license` | String | `null` | SPDX license identifier, max 32 chars |
 | `bitstreams` | Array | **Required** | List of bitstream paths / targets |
 | `bitstreams[].target` | String | **Required** | Target hardware for the bitstream (e.g. `gamebub_rev4`) |
